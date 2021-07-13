@@ -1,30 +1,30 @@
-import gr.codelearn.io.Directory;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PrintStream1 {
 
+    public static void LetsWriteToFile() {
 
-    public static void LetsWriteToFile (){
+        File F = new File(gr.codelearn.io.Directory.FILE_DIRECTORY.getPath() + "task3.txt");
 
-        File F = new File(Directory.FILE_DIRECTORY.getPath() + "task3.txt");
+        try (PrintStream fileWriter = new PrintStream(F);) {
 
-       try(PrintStream fileWriter = new PrintStream(F);){
+            List<String> list = new ArrayList<>();
+            list.add("kostas1 ");
+            list.add("kostas2 ");
 
-           fileWriter.println("Kostas1");
-           fileWriter.println("Kostas2");
-           fileWriter.println("Kostas3");
-           System.out.println("task 4 Done");
-       }
-       catch (FileNotFoundException e){
+            for (String element : list) {
+                fileWriter.println(element);
 
-           e.printStackTrace();
-       }
+            }
+        } catch (FileNotFoundException e) {
 
+            e.printStackTrace();
+        }
 
 
     }
-
 }

@@ -39,7 +39,7 @@ public class DataInputOutput {
 
           for(int i =0; i<5; i++){
 
-              System.out.println(dis.readUTF()+ " " + dis.readInt() + " " + dis.readDouble());
+              System.out.println("Product : "+ dis.readUTF()+ " Units : " + dis.readInt() + " Price : " + dis.readDouble());
 
           }
             System.out.println("task 1.2 done");

@@ -1,30 +1,35 @@
-import gr.codelearn.io.Directory;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PrintWriter1 {
 
 
-    public static void WriteNamesToFile() {
+        public static void WriteNamesToFile() {
 
 
-        File F = new File(Directory.FILE_DIRECTORY.getPath() + "task6.txt");
+            File F = new File(gr.codelearn.io.Directory.FILE_DIRECTORY.getPath() + "task6.txt");
 
-        try (PrintWriter pw = new PrintWriter(F)){
+            try (PrintWriter pw = new PrintWriter(F)) {
 
-            pw.println("Kostas1");
-            pw.println("Jostas2");
-            pw.println("Kostas3");
+                List<String> list = new ArrayList<>();
+                list.add("kostas1 ");
+                list.add("kostas2 ");
+                list.add("kostas3 ");
 
-            System.out.println("task 6 done");
+                for (String element : list) {
+                    pw.println(element);
+
+
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
         }
-
-
-    catch(IOException e){
-        e.printStackTrace();
-        }
-
     }
-}
+
+

@@ -1,7 +1,10 @@
-import java.io.*;
+import java.io.CharArrayWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CharArrayWriter1 {
-
 
     public static void WriteCharArraysToFiles(){
 
@@ -10,13 +13,21 @@ public class CharArrayWriter1 {
             FileWriter f2 = new FileWriter(gr.codelearn.io.Directory.FILE_DIRECTORY.getPath() + "task4.2.txt");
             CharArrayWriter caw = new CharArrayWriter()){
 
-            String str = "Kostas1 \nKostas2 \nKostas3";
-            char[] charArray = str.toCharArray();
-            caw.write(charArray);
+            List<String> list = new ArrayList<>();
+            list.add("kostas1 ");
+            list.add("kostas2 ");
+            list.add("kostas3 ");
+
+            for(String element:list){
+
+            caw.write(element.toCharArray());
             caw.writeTo(f1);
             caw.writeTo(f2);
+            caw.reset();
 
-            System.out.println("task 5 done");
+            }
+
+
 
 
 
